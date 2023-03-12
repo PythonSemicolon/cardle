@@ -1,0 +1,262 @@
+body{
+    background-color: #000000;
+}
+
+h1, #guessForm{
+    color: #b0b0b0;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.carResult{
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.model{
+    color: darkred;
+}
+
+#guessResult{
+    margin: 0 auto;
+    width: 520px;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 0 30px;
+    clear: both;
+}
+
+#guessForm{
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#guessGrid{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-auto-rows: 100px;
+    grid-gap: 5px;
+}
+
+.gridBox{
+    background-color: #343436;
+    color: #b0b0b0;
+    text-align: center;
+    position: relative;
+}
+
+.gridBox p, .gridBox img{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[id^=yearResult]{
+    font-size: 150%;
+}
+
+.gray{
+    background-color: #343436;
+    color: #b0b0b0;
+}
+
+.lightgray{
+    background-color: #b0b0b0;
+    color: #343436;
+}
+
+.green{
+    background-color: #4a7f45;
+    color: #2e2d32;
+}
+
+.yellow{
+    background-color: #a38f34;
+    color: #2e2d32;
+}
+
+#resultModal, #helpModal, #infoModal, #statsModal{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#resultMessage{
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    margin: 45vh auto;
+    padding: 10px;
+    background-color: #000000;
+    color: #b0b0b0;
+    border-radius: 5px;
+}
+
+#helpMessage, #infoMessage, #statsMessage{
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 750px;
+    margin: 15vh auto;
+    padding: 10px;
+    background-color: #b0b0b0;
+    color: #343436;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+#helpMessage{
+    height: 70vh;
+}
+
+#helpMessage::-webkit-scrollbar {
+     margin-right: 10px;
+     background: transparent; /* make scrollbar transparent */
+}
+
+input[type="text"]{
+    border: 0;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+#guessButton{
+    margin-top: 20px;
+    border: none;
+    border-radius: 0;
+    padding: 5px 20px;
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: #343436;
+    color: #b0b0b0;
+}
+
+#guessForm>label{
+    font-size: 125%;
+}
+
+#guessButton:hover {
+    cursor: pointer;
+    background-color: #b0b0b0;
+    color: #343436;
+}
+
+#iconHeader{
+    float: right;
+}
+
+#iconHeader:hover {
+    cursor: pointer;
+}
+
+#helpMessage, #infoMessage{
+    padding: 20px;
+}
+
+#helpContent, #infoContent{
+    padding: 0 30px 15px;
+}
+
+hr{
+    border-color: #2e2d32;
+}
+
+#helpMessage p, li{
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.infoNote{
+    margin-top: -15px;
+    font-style: italic;
+    font-size: 80%;
+}
+
+#helpMessage h6{
+    font-size: 100%;
+    margin: 20px 0 10px;
+}
+
+#helpMessage h3, #infoMessage h3 {
+    clear: both;
+}
+
+ul{
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    margin: 10px 0 0;
+}
+
+.closeModal{
+    float: right;
+}
+
+.closeModal:hover {
+    cursor: pointer;
+}
+
+#infoIcon, #statsIcon{
+    margin-left: 5px;
+}
+
+.statBar{
+    background-color: #2e2d32;
+    color: #b0b0b0;
+    width: 400px;
+    font-size: 100%;
+    text-align: right;
+    vertical-align: middle;
+    padding: 1px 3px 0 0;
+}
+
+#statGraph{
+    margin: 0 auto;
+    display: grid;
+    width: 420px;
+    grid-template-columns: 5% 95%;
+    grid-auto-rows: 20px;
+    grid-gap: 5px;
+}
+
+#streakStats{
+    margin: 0 auto;
+    display: grid;
+    width: 375px;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-auto-rows: 35px;
+    grid-gap: 5px;
+}
+
+#statsMessage h3{
+    clear: both;
+    margin-bottom: 10px;
+}

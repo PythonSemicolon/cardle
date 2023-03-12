@@ -1,0 +1,9 @@
+.carResult{
+    font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.model{
+    color: darkred;
+}
