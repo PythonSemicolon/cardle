@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/cardle.css">
+    <link rel="icon" href="https://i3.lensdump.com/i/rntYYr.png">
+    <title>Cardle</title>
+</head>
+<body>
+    <div id="iconHeader">
+        <img id="helpIcon" src="https://i.lensdump.com/i/rntnfT.png" alt="Help" width="30">
+        <img id="statsIcon" src="https://i2.lensdump.com/i/rnnqvP.png" alt="Help" width="30">
+        <img id="infoIcon" src="https://i1.lensdump.com/i/rntLjb.png" alt="Help" width="30">
+    </div>
+    <h1>CARDLE</h1>
+    <div id="resultModal">
+        <div id="resultMessage"></div>
+    </div>
+    <div id="statsModal">
+        <div id="statsMessage">
+            <img id="closeStats" class="closeModal" src="https://i3.lensdump.com/i/rnteKz.png" alt="Help" width="30">
+            <h3>GUESS DISTRIBUTION</h3>
+            <hr>
+            <div id="statsContent">
+                <div id="statGraph">
+                    <div class="statNum"> 1:</div><div class="statBar" id="statBar1"></div>
+                    <div class="statNum"> 2:</div><div class="statBar" id="statBar2"></div>
+                    <div class="statNum"> 3:</div><div class="statBar" id="statBar3"></div>
+                    <div class="statNum"> 4:</div><div class="statBar" id="statBar4"></div>
+                    <div class="statNum"> 5:</div><div class="statBar" id="statBar5"></div>
+                    <div class="statNum"> 6:</div><div class="statBar" id="statBar6"></div>
+                    <div class="statNum"> 7:</div><div class="statBar" id="statBar7"></div>
+                    <div class="statNum"> 8:</div><div class="statBar" id="statBar8"></div>
+                    <div class="statNum"> 9:</div><div class="statBar" id="statBar9"></div>
+                    <div class="statNum"> 10:</div><div class="statBar" id="statBar0"></div>
+                </div>
+                <h3>STATISTICS</h3>
+                <hr>
+                <div id="streakStats">
+                    <div id="gamesPlayedLabel">Games Played</div>
+                    <div id="winPctLabel">Success Rate</div>
+                    <div id="currStreakLabel">Current Streak</div>
+                    <div id="maxStreakLabel">Max Streak</div>
+                    <div id="avgGuessesLabel">Average Guesses</div>
+                    <div id="gamesPlayed"></div>
+                    <div id="winPct"></div>
+                    <div id="currStreak"></div>
+                    <div id="maxStreak"></div>
+                    <div id="avgGuesses"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="infoModal">
+        <div id="infoMessage">
+            <img id="closeInfo" class="closeModal" src="https://i3.lensdump.com/i/rnteKz.png" alt="Help" width="30">
+            <h3>ABOUT CARDLE</h3>
+            <hr>
+            <div id="infoContent">
+                <p>Created by Jordan and Taz Scott-Talib, 2022</p>
+                <p><a href="https://www.back4app.com/database/back4app/car-make-model-dataset" target="_blank">Data Source</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="helpModal">
+        <div id="helpMessage">
+            <img id="closeHelp" class="closeModal" src="https://i3.lensdump.com/i/rnteKz.png" alt="Help" width="30">
+            <h3>INSTRUCTIONS</h3>
+            <div id="helpContent">
+                <h6 class="helpQ">General</h6>
+                <hr>
+                <p class="helpP">
+                    Every day, a unique car model  is selected as the mystery <span class="italic">CARDLE</span>. Your job is to identify this car using clues provided from your guesses in no more than 10 attempts!
+                </p>
+                <h6 class="helpQ">What car models may be guessed?</h6>
+                <hr>
+                <p class="helpP">
+                    <span class="italic">CARDLE</span> models must have been manufactured in the US at some point during the past 30 years. Modifiers such as "Cargo", "Sport", "Passenger" and even "Hybrid" and "Electric" have been removed to avoid redundancy and tedious guesswork, even if these names tend to represent significant design differences (and we sincerely apologize if this limitation proves offensive to purists!). For models with multiple editions over the years, the earliest model has been selected. The full list of 800 models can be found <a href="https://cardle.me/directory/" target="_blank">here</a> (although we don’t recommend perusing it for the most effective challenge!)
+                </p>
+                <h6 class="helpQ">What do each of the squares mean?</h6>
+                <hr>
+                <p class="helpP">
+                    There are five squares, each offering unique hints to guide you towards the <span class="italic">CARDLE</span>.
+                </p>
+                <ol>
+                    <li>
+                        <span class="bold">Year:</span> The first square's value corresponds to the year in which the model was first manufactured. Green indicates a guess within +/-1 years; yellow indicates a guess within +/-5 years; black indicates a guess off by 5 or more years.</p><p class="helpNote">Exception: 1992 is the earliest available year for this dataset, thus 1992 editions are the earliest editions possible. Older cars may be trickier to identify by year!</p>
+                    </li>
+<!--                    <li>-->
+<!--                        <span class="bold">Category:</span> The second square's value represents the model's type, which corresponds to at least one of the following categories: <span class="bold">SEDAN, COUPE, SUV, CONVERTIBLE, WAGON, HATCHBACK, MINIVAN/VAN</span> and <span class="bold">PICKUP</span>. Models with multiple category designations display a generic "Multiple" icon when guessed. Green indicates that the guessed model's category/categories are correct; yellow indicates one or two but not all categories match the mystery model; black indicates only incorrect categories.-->
+<!--                    </li>-->
+                    <li>
+                        <span class="bold">Category:</span> The second square's value represents the model's type, which corresponds to at least one of the following categories:
+                        <ul>
+                            <li>SEDAN</li>
+                            <li>COUPE</li>
+                            <li>SUV</li>
+                            <li>CONVERTIBLE</li>
+                            <li>WAGON</li>
+                            <li>HATCHBACK</li>
+                            <li>MINIVAN/VAN</li>
+                            <li>PICKUP</li>
+                        </ul>
+                        Models with multiple category designations display a generic "Multiple" icon when guessed. Green indicates that the guessed model's category/categories are correct; yellow indicates one or two but not all categories match the mystery model; black indicates only incorrect categories.
+                    </li>
+                    <li>
+                        <span class="bold">Country:</span> The third square represents the country of origin of the manufacturer. A green guess indicates that the manufacturer is from the same country; yellow indicates an incorrect country but correct continent; black indicates an incorrect continent altogether.
+                    </li>
+                    <li>
+                        <span class="bold">Make:</span> The fourth square indicates how close you are to the correct manufacturer. A green guess is a correct make; yellow indicates a make starting with the same letter; black indicates any other make.
+                    </li>
+                    <li>
+                        <span class="bold">Model:</span> A yellow square in the fifth column indicates a model starting with the same letter as the answer. When the model square is green, you have found the mystery <span class="italic">CARDLE</span>!
+                    </li>
+                </ol>
+                <p>Hover over any icon to display more information about your guess.</p>
+                <p>Good luck!</p>
+            </div>
+        </div>
+    </div>
+    <div id="carDiv">
+        <div id="guessResult">
+            <div id="guessGrid">
+                <div class="gridBox" id="yearResult1">&nbsp;</div>
+                <div class="gridBox" id="categoryResult1">&nbsp;</div>
+                <div class="gridBox" id="countryResult1">&nbsp;</div>
+                <div class="gridBox" id="makeResult1">&nbsp;</div>
+                <div class="gridBox" id="modelResult1">&nbsp;</div>
+                <div class="gridBox" id="yearResult2">&nbsp;</div>
+                <div class="gridBox" id="categoryResult2">&nbsp;</div>
+                <div class="gridBox" id="countryResult2">&nbsp;</div>
+                <div class="gridBox" id="makeResult2">&nbsp;</div>
+                <div class="gridBox" id="modelResult2">&nbsp;</div>
+                <div class="gridBox" id="yearResult3">&nbsp;</div>
+                <div class="gridBox" id="categoryResult3">&nbsp;</div>
+                <div class="gridBox" id="countryResult3">&nbsp;</div>
+                <div class="gridBox" id="makeResult3">&nbsp;</div>
+                <div class="gridBox" id="modelResult3">&nbsp;</div>
+                <div class="gridBox" id="yearResult4">&nbsp;</div>
+                <div class="gridBox" id="categoryResult4">&nbsp;</div>
+                <div class="gridBox" id="countryResult4">&nbsp;</div>
+                <div class="gridBox" id="makeResult4">&nbsp;</div>
+                <div class="gridBox" id="modelResult4">&nbsp;</div>
+                <div class="gridBox" id="yearResult5">&nbsp;</div>
+                <div class="gridBox" id="categoryResult5">&nbsp;</div>
+                <div class="gridBox" id="countryResult5">&nbsp;</div>
+                <div class="gridBox" id="makeResult5">&nbsp;</div>
+                <div class="gridBox" id="modelResult5">&nbsp;</div>
+                <div class="gridBox" id="yearResult6">&nbsp;</div>
+                <div class="gridBox" id="categoryResult6">&nbsp;</div>
+                <div class="gridBox" id="countryResult6">&nbsp;</div>
+                <div class="gridBox" id="makeResult6">&nbsp;</div>
+                <div class="gridBox" id="modelResult6">&nbsp;</div>
+                <div class="gridBox" id="yearResult7">&nbsp;</div>
+                <div class="gridBox" id="categoryResult7">&nbsp;</div>
+                <div class="gridBox" id="countryResult7">&nbsp;</div>
+                <div class="gridBox" id="makeResult7">&nbsp;</div>
+                <div class="gridBox" id="modelResult7">&nbsp;</div>
+                <div class="gridBox" id="yearResult8">&nbsp;</div>
+                <div class="gridBox" id="categoryResult8">&nbsp;</div>
+                <div class="gridBox" id="countryResult8">&nbsp;</div>
+                <div class="gridBox" id="makeResult8">&nbsp;</div>
+                <div class="gridBox" id="modelResult8">&nbsp;</div>
+                <div class="gridBox" id="yearResult9">&nbsp;</div>
+                <div class="gridBox" id="categoryResult9">&nbsp;</div>
+                <div class="gridBox" id="countryResult9">&nbsp;</div>
+                <div class="gridBox" id="makeResult9">&nbsp;</div>
+                <div class="gridBox" id="modelResult9">&nbsp;</div>
+                <div class="gridBox" id="yearResult10">&nbsp;</div>
+                <div class="gridBox" id="categoryResult10">&nbsp;</div>
+                <div class="gridBox" id="countryResult10">&nbsp;</div>
+                <div class="gridBox" id="makeResult10">&nbsp;</div>
+                <div class="gridBox" id="modelResult10">&nbsp;</div>
+            </div>
+        </div>
+        <div id="guessForm">
+            <label for="carGuess">Enter a car: </label>
+            <input type="text" name="carGuess" id="carGuess"><br>
+            <button id="guessButton">GUESS</button>
+            <div id="errMsg"></div>
+        </div>
+    </div>
+    <script src="scripts/cardle.js"></script>
+</body>
+</html>
